@@ -104,6 +104,7 @@ function CategoryApi() {
             <nav className='navbar'>
                 <h1 className='navhead'>CATEGORY DETAILS</h1>
                 <div className='navlink'>
+                <a href='/home'>Home</a>
                 <a href='/Client'>Client</a>
                 <a href='/Category'>Category</a>
                 <a href='/Employee'>Employee</a>

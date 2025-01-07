@@ -4,6 +4,7 @@ import DataTable from 'react-data-table-component'
 import { Navigate, useNavigate } from 'react-router-dom'
 
 function EmployeeApi() {
+  let nav=useNavigate()
   let [Apidata, setApidata] = useState()
   function Employeedata() {
     axios.get("http://catodotest.elevadosoftwares.com/Employee/GetAllEmployeeDetails")
@@ -82,7 +83,7 @@ function EmployeeApi() {
   }
 
 
-  let nav=useNavigate()
+ 
   function handleNavigate(){
     nav("/Employeeform")
   }
@@ -91,6 +92,7 @@ function EmployeeApi() {
       <nav className='navbar'>
                 <h1 className='navhead'>EMPLOYEE DETAILS</h1>
                 <div className='navlink'>
+                <a href='/home'>Home</a>
                 <a href='/Client'>Client</a>
                 <a href='/Category'>Category</a>
                 <a href='/Employee'>Employee</a>
