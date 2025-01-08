@@ -14,13 +14,16 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Login/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
         <Route path='/Category' element={<CategoryApi/>}></Route>
         <Route path='/Client' element={<ClientApi/>}></Route>
         <Route path='/Employee' element={<EmployeeApi/>}></Route>
         <Route path='/Employeeform' element={<EmployeeForm/>}></Route>
         <Route path='/Employeeform/:id' element={<EmployeeForm/>}></Route>
         <Route path='/signup' element={<Signin/>}></Route>
+        <Route path='/home/:id' element={<Home/>}></Route>
         <Route path='/home' element={<Home/>}></Route>
+
       </Routes>
       </BrowserRouter>
     </div>

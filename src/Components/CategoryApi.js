@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'
 
 function CategoryApi() {
-
     let [datas, setdatas] = useState()
     function getdata() {
         axios.get('http://catodotest.elevadosoftwares.com/Category/GetAllCategories')

@@ -161,7 +161,7 @@ function ClientApi() {
       <nav className="navbar">
         <h1 className="navhead">CLIENT DETAILS</h1>
         <div className="navlink">
-        <a href='/home'>Home</a>
+        <a href='/home/:id'>Home</a>
           <a href="/Client">Client</a>
           <a href="/Category">Category</a>
           <a href="/Employee">Employee</a>
@@ -170,7 +170,7 @@ function ClientApi() {
       <div class="container">
         <div className="par"></div>
       <h1 className="word">
-        Let's....---------Change </h1> 
+        LET'S....---------CHANGE </h1> 
       
       <div className="box">
         <form onSubmit={handleSubmit} className="employee-form">
