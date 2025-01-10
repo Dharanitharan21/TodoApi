@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
+import { Link } from "react-router-dom";
 
 function ClientApi() {
   let [Api, setaApi] = useState();
@@ -156,87 +157,95 @@ function ClientApi() {
     alert("saved");
     Apidata();
   }
+  const [isNavOpen, setIsNavOpen] = useState(false); // State for toggling navbar
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen); // Toggle navbar
+  };
   return (
     <div>
       <nav className="navbar">
         <h1 className="navhead">CLIENT DETAILS</h1>
-        <div className="navlink">
-        <a href='/home/:id'>Home</a>
-          <a href="/Client">Client</a>
-          <a href="/Category">Category</a>
-          <a href="/Employee">Employee</a>
+        <button className='hamburger' onClick={toggleNav}>☰</button>
+        <div className={`navlink ${isNavOpen ? 'active' : ''}`}>
+          <Link to={'/home'}>
+            <button className='a'>Home</button></Link>
+          <Link to={'/Client'}>
+            <button className='a' href='/Client'>Client</button></Link>
+          <Link to={'/Category'}><button className='a'>Category</button></Link>
+          <Link to={'/Employee'}><button className='a'>Employee</button></Link>
         </div>
       </nav>
       <div class="container">
         <div className="par"></div>
-      <h1 className="word">
-        LET'S....---------CHANGE </h1> 
-      
-      <div className="box">
-        <form onSubmit={handleSubmit} className="employee-form">
-          <input
-            type="text"
-            placeholder="Client Name"
-            name="clientName"
-            value={userinput.clientName}
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            placeholder="Phone Number"
-            name="phone"
-            value={userinput.phone}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="Address"
-            name="address"
-            value={userinput.address}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="GST"
-            name="gst"
-            value={userinput.gst}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="Website"
-            name="website"
-            value={userinput.website}
-            onChange={handleChange}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={userinput.email}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="Contact Person"
-            name="contactPerson"
-            value={userinput.contactPerson}
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            placeholder="Phone Number"
-            name="phoneNumber"
-            value={userinput.phoneNumber}
-            onChange={handleChange}
-          />
-          <button type="submit" className="Employee-sub-btn">
-            Submit
-          </button>
-        </form>
+        <h1 className="word">
+          LET'S....-------CHANGE </h1>
+
+        <div className="box">
+          <form onSubmit={handleSubmit} className="employee-form">
+            <input
+              type="text"
+              placeholder="Client Name"
+              name="clientName"
+              value={userinput.clientName}
+              onChange={handleChange}
+            />
+            <input
+              type="number"
+              placeholder="Phone Number"
+              name="phone"
+              value={userinput.phone}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="Address"
+              name="address"
+              value={userinput.address}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="GST"
+              name="gst"
+              value={userinput.gst}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="Website"
+              name="website"
+              value={userinput.website}
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={userinput.email}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="Contact Person"
+              name="contactPerson"
+              value={userinput.contactPerson}
+              onChange={handleChange}
+            />
+            <input
+              type="number"
+              placeholder="Phone Number"
+              name="phoneNumber"
+              value={userinput.phoneNumber}
+              onChange={handleChange}
+            />
+            <button type="submit" className="Employee-sub-btn">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
-      </div>
-     
+
 
       <DataTable
         columns={colunm}

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 function EmployeeApi() {
   let nav=useNavigate()
@@ -87,15 +87,23 @@ function EmployeeApi() {
   function handleNavigate(){
     nav("/Employeeform")
   }
+  const [isNavOpen, setIsNavOpen] = useState(false); // State for toggling navbar
+  
+    const toggleNav = () => {
+      setIsNavOpen(!isNavOpen); // Toggle navbar
+    };
   return (
     <div>
       <nav className='navbar'>
                 <h1 className='navhead'>EMPLOYEE DETAILS</h1>
-                <div className='navlink'>
-                <a href='/home'>Home</a>
-                <a href='/Client'>Client</a>
-                <a href='/Category'>Category</a>
-                <a href='/Employee'>Employee</a>
+                <button className='hamburger' onClick={toggleNav}>☰</button>
+                <div className={`navlink ${isNavOpen ? 'active' : ''}`}>
+                  <Link to={'/home'}>
+                <button className='a'>Home</button></Link>
+                <Link to={'/Client'}>
+                <button className='a' href='/Client'>Client</button></Link>
+                <Link to={'/Category'}><button className='a'>Category</button></Link>
+                <Link to={'/Employee'}><button className='a'>Employee</button></Link>
                 <button className='employee-btn' onClick={handleNavigate} >Add Details</button>
                 </div>
             </nav>

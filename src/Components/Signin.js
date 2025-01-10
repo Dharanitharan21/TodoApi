@@ -9,7 +9,7 @@ function Signin() {
         gender: "",
         mail: ""
     });
-    let nav = useNavigate();  // Added navigation
+    let nav = useNavigate();  
 
     function handleinput(e) {
         setuserinput({ ...userinput, [e.target.name]: e.target.value });
@@ -21,7 +21,7 @@ function Signin() {
             .then(response => {
                 console.log(response);
                 alert("Successfully Registered");
-                nav("/login");  // Redirect to the login page after successful signup
+                nav("/login");  
             })
             .catch(error => {
                 console.error("Signup error:", error);
@@ -31,6 +31,8 @@ function Signin() {
 
     return (
         <div>
+            <h1 className='word2'>TO DO TODAY</h1>
+
             <form onSubmit={handleSubmit} className='employee-form'>
                 <h2>Signup</h2>
                 <input type='text' placeholder='Name' name='name' value={userinput.name} onChange={handleinput} />

@@ -24,16 +24,9 @@ body {
     color: white;
     background: linear-gradient(90deg, #6a1b9a, #8e24aa);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  
-
-
 }
 
-.navbar a {
+.a {
     text-decoration: none;
     margin: 0 10px;
     font-size: 16px;
@@ -44,11 +37,9 @@ body {
     background-color: white;
     font-weight: bold;
     transition: all 0.3s ease;
-   
-
 }
 
-.navbar a:hover {
+.a:hover {
     background-color: #8e24aa;
     color: white;
     border-color: white;
@@ -100,7 +91,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -187,10 +178,157 @@ body {
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    
     white-space: nowrap; 
+}
+.word2{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 140px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(90deg, #6a1b9a, #ab47bc, #5c6bc0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    white-space: nowrap; 
+}
+.word1{
+    position: absolute;
+    top: 50%;
+    left: 53.5%;
+    transform: translate(-50%, -50%);
+    font-size: 140px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(90deg, #6a1b9a, #ab47bc, #5c6bc0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    white-space: nowrap;
 }
 .signup{
     text-decoration: none;
     align-self: center;
+}
+
+/* Navbar Links */
+.navlink {
+    display: flex;
+    gap: 10px;
+
+}
+
+.a:hover {
+    background: #8e24aa;
+    color: white;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1224px) {
+    .navhead {
+        font-size: 20px;
+    }
+    .word{
+        display: none;
+    }
+    .word2{
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navlink {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(90deg, #6a1b9a, #8e24aa);
+        position: absolute;
+        top: 48px;
+        right: 0px;
+        width: 40%;
+        height: 100vh;
+        padding: 10px;
+        border-radius: 0px 0px 0px 10px;
+        z-index: 10;
+    }
+    .a{
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 16px;
+        color:white;
+        border-radius: 0px;
+        margin-left: 0px;
+        background: linear-gradient(100deg, #6a1b9a, #8e24aa);
+        width: 99%;
+        font-weight: bold;
+        padding-left: 0px;
+        display: flex;
+        justify-content: left;
+        border: 0px solid transparent;
+        
+    }
+    .employee-btn{
+    border: 0px;
+    padding-left: 0px;
+    border-radius: 0px;
+    background: linear-gradient(90deg, #6a1b9a,#8e24aa);
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    box-shadow: none;
+    display: flex;
+    justify-content: left;
+    }
+
+    .navlink.active {
+        display: flex; 
+    }
+
+    .hamburger {
+        display: block; 
+    }
+    .word1{
+        font-size: 100px;
+    }
+    .word2{
+        font-size: 90px;
+    }
+}
+
+@media (max-width: 420px) {
+    .navhead {
+        font-size: 16px;
+    }
+
+    .a {
+        font-size: 14px;
+    }
+    .word2{
+        font-size: 50px;
+        top:30px
+    }
+    .word1{
+        font-size: 50px;
+    }
+}
+@media (max-width: 320px) {
+    
+    .word2{
+        font-size: 50px;
+        top:30px;
+        margin-left: 45px;
+    }
 }

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import DataTable from 'react-data-table-component'
+import { Link } from 'react-router-dom'
 
 function CategoryApi() {
     let [datas, setdatas] = useState()
@@ -55,7 +56,7 @@ function CategoryApi() {
     function deleteitems(id) {
         let remark = prompt("please enter the remarks")
         if(remark){
-        axios.post("http://catodotest.elevadosoftwares.com/Category/RemoveCategory", {
+        axios.post("http://catodotest.elevadosoftwares.com/Category/RemoveCategory",{
             categoryId: id,
             removedRemarks: remark,
             createdBy: 1
@@ -79,34 +80,42 @@ function CategoryApi() {
     const customStyles = {
         rows: {
             style: {
-                minHeight: '40px', // override the row height
+                minHeight: '40px', 
             },
         },
         headCells: {
             style: {
 
                 fontSize: '20px',
-                paddingLeft: '8px', // override the cell padding for head cells
+                paddingLeft: '8px',
                 paddingRight: '8px',
                 textTransform: 'uppercase'
             },
         },
         cells: {
             style: {
-                paddingLeft: '20px', // override the cell padding for data cells
+                paddingLeft: '20px', 
                 paddingRight: '8px',
             },
         },
     };
+    const [isNavOpen, setIsNavOpen] = useState(false); // State for toggling navbar
+    
+      const toggleNav = () => {
+        setIsNavOpen(!isNavOpen); // Toggle navbar
+      };
     return (
         <div>
             <nav className='navbar'>
                 <h1 className='navhead'>CATEGORY DETAILS</h1>
-                <div className='navlink'>
-                <a href='/home'>Home</a>
-                <a href='/Client'>Client</a>
-                <a href='/Category'>Category</a>
-                <a href='/Employee'>Employee</a>
+                <button className='hamburger' onClick={toggleNav}>☰</button>
+                <div className={`navlink ${isNavOpen ? 'active' : ''}`}>
+                <Link to={'/home'}>
+                <button className='a'>Home</button></Link>
+                <Link to={'/Client'}>
+                <button className='a' href='/Client'>Client</button></Link>
+                <Link to={'/Category'}><button className='a'>Category</button></Link>
+                <Link to={'/Employee'}><button className='a'>Employee</button></Link>
                 </div>
             </nav>
             <form onSubmit={handleSubmit} className='employee-form'>

@@ -20,10 +20,8 @@ function Login() {
                 console.log(response);
                 alert("Logged in successfully");
                 
-                // Save the username in sessionStorage
+               
                 sessionStorage.setItem("username", userinput.name);
-                
-                // Navigate to the home page
                 nav('/home');
             })
             .catch(error => {
@@ -34,6 +32,7 @@ function Login() {
 
     return (
         <div>
+            <h1 className='word2'>TO DO TODAY</h1>
             <form onSubmit={handleSubmit} className='employee-form'>
                 <h2>Login</h2>
                 <input 
